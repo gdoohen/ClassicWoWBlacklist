@@ -1,0 +1,37 @@
+{
+    "name": "classicblacklistserver",
+    "version": "3.2.0",
+    "description": "The Express.js server for The Classic Wow Blacklist",
+    "main": "serverIndex.js",
+    "scripts": {
+        "start": "node -r esm serverIndex.js",
+        "dev": "concurrently \"nodemon --inspect -r esm serverIndex.js\" \"cd client && npm start\"",
+        "dev_debug": "concurrently \"set DEBUG=express:* & nodemon --inspect -r esm serverIndex.js\" \"cd client && npm start\"",
+        "dev_server": "nodemon --inspect -r esm serverIndex.js",
+        "debug_server": "set DEBUG=express:* & nodemon --inspect -r esm serverIndex.js",
+        "heroku-postbuild": "cd client && npm install && npm audit fix && npm run build"
+    },
+    "author": "Grant Doohen",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^3.0.6",
+        "body-parser": "^1.19.0",
+        "concurrently": "^4.1.1",
+        "debounce": "^1.2.0",
+        "esm": "^3.2.25",
+        "express": "^4.17.1",
+        "express-http-to-https": "^1.1.4",
+        "express-promise-router": "^3.0.3",
+        "generate-password": "^1.4.2",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.15",
+        "mailgun-js": "^0.22.0",
+        "memoizerific": "^1.11.3",
+        "morgan": "^1.9.1",
+        "node-cron": "^2.0.3",
+        "nodemon": "^1.19.1",
+        "path": "^0.12.7",
+        "pg": "^7.12.0",
+        "request-ip": "^2.1.3"
+    }
+}
